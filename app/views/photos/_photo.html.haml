@@ -1,4 +1,2 @@
 .span4
-  = link_to image_tag(photo.image(:thumb)), photo.image.url
-  = photo.try(:name)
-  = photo.try(:author)
+  = link_to image_tag(photo.image(:thumb)), photo.image.url, :class => 'fancybox', :rel => 'gallery', :title=> photo.name

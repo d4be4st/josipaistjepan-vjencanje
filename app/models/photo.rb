@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
 
   attr_accessible :author, :name, :image
   has_attached_file :image, 
-    :styles => {:thumb => "300x300>"}, 
+    :styles => {:thumb => "300x300>", :original => "2048x2048>"}, 
     :storage => :dropbox,
     :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
     :dropbox_options => {

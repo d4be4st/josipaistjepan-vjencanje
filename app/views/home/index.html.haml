@@ -7,4 +7,5 @@
   - @photos.each do |photo|
     = render photo
 
+= will_paginate @photos, :renderer => BootstrapPagination::Rails
 = render 'home/template'
