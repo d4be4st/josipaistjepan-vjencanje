@@ -15,7 +15,7 @@
 #= require jquery-fileupload/basic
 #= require jquery-fileupload/vendor/tmpl
 #= require bootstrap
-#= require fancybox
+#= require prettyphoto-rails
 #= require script
 
 jQuery ->

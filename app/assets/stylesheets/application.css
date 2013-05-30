@@ -10,7 +10,8 @@
  *
  *= require_self
  *= require bootstrap
- *= require fancybox
+ *= require prettyphoto-rails
+ *= require photos
  */
 
 .content{
