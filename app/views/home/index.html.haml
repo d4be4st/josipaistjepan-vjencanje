@@ -1,7 +1,7 @@
 .row
   .add-photo.span12
     = form_for Photo.new do |f|
-      = f.label :image, "Uploading photos:"
+      = f.label :image, "Uploading photos (ako ne ide pokušajte sa slikama manjim od <3 MBa):"
       = f.file_field :image, :multiple => true, :name => "photo[image]"
 .row#photos
   - @photos.each do |photo|

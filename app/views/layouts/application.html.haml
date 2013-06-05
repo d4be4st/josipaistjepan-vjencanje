@@ -4,16 +4,11 @@
     %title JosipaistjepanVjencanje
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    %meta{content:'width=device-width, initial-scale=1.0', name:'viewport'}
     = csrf_meta_tags
   %body
-    %header.navbar.navbar-fixed-top
-      %nav.navbar-inner
-        .container
-          %ul.nav
-            %li
-              = link_to 'Home', root_url
-            %li
-              = link_to 'Add Photo', new_photo_url
     .container
-      .content 
+      .content
+        .row.text-center
+          %h1 Slike s Vjenacanja Josipe i Stjepana :D
         = yield
