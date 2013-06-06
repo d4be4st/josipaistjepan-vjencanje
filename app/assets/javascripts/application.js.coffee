@@ -37,21 +37,21 @@ jQuery ->
       if data.context
         progress = parseInt(data.loaded / data.total * 100, 10)
         data.context.find('.bar').css('width', progress + '%')
-        if (data.loaded === data.total)
-          data.context.find('.bar').append('Please wait, uploading to dropbox...');
+        if data.loaded == data.total
+          data.context.find('.bar').append('Please wait, uploading to dropbox...')
 
-  $('#new_video').fileupload
-    dataType: "script"
-    add: (e, data) ->
-      types = /(\.|\/)(mp4|ogv|webm)$/i
-      file = data.files[0]
-      if types.test(file.type) || types.test(file.name)
-        data.context = $(tmpl("template-upload", file))
-        $('#new_video').append(data.context)
-        data.submit()
-      else
-        alert("#{file.name} is not a mp4, ogv or webm video file")
-    progress: (e, data) ->
-      if data.context
-        progress = parseInt(data.loaded / data.total * 100, 10)
-        data.context.find('.bar').css('width', progress + '%')
+  # $('#new_video').fileupload
+  #   dataType: "script"
+  #   add: (e, data) ->
+  #     types = /(\.|\/)(mp4|ogv|webm)$/i
+  #     file = data.files[0]
+  #     if types.test(file.type) || types.test(file.name)
+  #       data.context = $(tmpl("template-upload", file))
+  #       $('#new_video').append(data.context)
+  #       data.submit()
+  #     else
+  #       alert("#{file.name} is not a mp4, ogv or webm video file")
+  #   progress: (e, data) ->
+  #     if data.context
+  #       progress = parseInt(data.loaded / data.total * 100, 10)
+  #       data.context.find('.bar').css('width', progress + '%')
