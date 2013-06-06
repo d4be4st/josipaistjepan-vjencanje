@@ -4,9 +4,9 @@
       = f.label :image, "Upload slika (ako ne ide pokušajte sa slikama manjim od <3 MBa):"
       = f.file_field :image, :multiple => true, :name => "photo[image]"
   / .add-video.span6
-    =# form_for Photo.new, :html => {:id => "new_video"} do |f|
-      =# f.label :video, "Upload videa (.mp4, .ogv, .webm):"
-      =# f.file_field :video, :name => "photo[video]"
+  /   =# form_for Photo.new, :html => {:id => "new_video"} do |f|
+  /     =# f.label :video, "Upload videa (.mp4, .ogv, .webm):"
+  /     =# f.file_field :video, :name => "photo[video]"
 .row#photos
   - @photos.each do |photo|
     = render photo
