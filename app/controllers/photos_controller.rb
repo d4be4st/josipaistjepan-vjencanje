@@ -10,4 +10,10 @@ class PhotosController < ApplicationController
       format.js
     end
   end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to admin_path
+  end
 end

@@ -18,6 +18,8 @@
 #= require prettyphoto-rails
 #= require script
 
+window.total_upload = 0
+
 jQuery ->
   $('#new_photo').fileupload
     dataType: "script"
@@ -27,9 +29,26 @@ jQuery ->
       if types.test(file.type) || types.test(file.name)
         data.context = $(tmpl("template-upload", file))
         $('#new_photo').append(data.context)
+        window.total_upload += 1
         data.submit()
       else
         alert("#{file.name} is not a gif, jpeg, or png image file")
+    progress: (e, data) ->
+      if data.context
+        progress = parseInt(data.loaded / data.total * 100, 10)
+        data.context.find('.bar').css('width', progress + '%')
+
+  $('#new_video').fileupload
+    dataType: "script"
+    add: (e, data) ->
+      types = /(\.|\/)(mp4|ogv|webm)$/i
+      file = data.files[0]
+      if types.test(file.type) || types.test(file.name)
+        data.context = $(tmpl("template-upload", file))
+        $('#new_video').append(data.context)
+        data.submit()
+      else
+        alert("#{file.name} is not a mp4, ogv or webm video file")
     progress: (e, data) ->
       if data.context
         progress = parseInt(data.loaded / data.total * 100, 10)

@@ -2,7 +2,10 @@
   alert("Failed to upload photo: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
 <% else %>
   $("#photos").prepend("<%= j render(@photo) %>");
-  $(".upload").remove();
+  window.total_upload -= 1;
+  if (window.total_upload === 0) {
+    $(".upload").remove();
+  }
   $("a[rel^='prettyPhoto']").prettyPhoto({
     social_tools: ''
   });

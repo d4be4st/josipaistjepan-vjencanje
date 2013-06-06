@@ -1,0 +1,13 @@
+%table.table
+  %th Thumb
+  %th url
+  %th
+  - @photos.each do |photo|
+    %tr
+      %td
+        = image_tag photo.image.url(:thumb) if photo.image.present?
+      %td
+        = link_to photo.image.url, photo.image.url if photo.image.present?
+        = link_to photo.video.url, photo.video.url if photo.video.present?
+      %td
+        = link_to 'Delete', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }

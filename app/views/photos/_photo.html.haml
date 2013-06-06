@@ -1,2 +1,7 @@
 .span4
-  = link_to image_tag(photo.image(:thumb)), photo.image.url, :class => 'fancybox', :rel => 'prettyPhoto[gallery]', :title => photo.name
+  - if photo.image.present?
+    = link_to image_tag(photo.image(:thumb)), photo.image.url, :class => 'fancybox', :rel => 'prettyPhoto[gallery]', :title => photo.name
+  - else
+    %a{:class=> 'fancybox', :rel => 'prettyPhoto[gallery]', :title => photo.name, :href => "#"}
+      %video.video-js.vjs-default-skin{:controls => true, :preload => 'auto'}
+        %source{:src => photo.video.url, :type => "video/mp4"}
