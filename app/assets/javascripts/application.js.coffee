@@ -37,6 +37,8 @@ jQuery ->
       if data.context
         progress = parseInt(data.loaded / data.total * 100, 10)
         data.context.find('.bar').css('width', progress + '%')
+        if (data.loaded === data.total)
+          data.context.find('.bar').append('Please wait, uploading to dropbox...');
 
   $('#new_video').fileupload
     dataType: "script"
