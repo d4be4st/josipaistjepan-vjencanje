@@ -16,7 +16,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-  gem 'jquery-fileupload-rails' 
+  gem 'jquery-fileupload-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'quiet_assets'
 end
@@ -30,7 +30,7 @@ gem 'thin'
 gem 'haml'
 gem 'jquery-rails'
 gem 'paperclip'
-gem 'paperclip-dropbox'
+# gem 'paperclip-dropbox'
 gem 'bootstrap-sass'
 gem 'prettyphoto-rails'
 gem 'will_paginate'
