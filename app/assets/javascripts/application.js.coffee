@@ -38,7 +38,7 @@ jQuery ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         data.context.find('.bar').css('width', progress + '%')
         if data.loaded == data.total
-          data.context.find('.bar').append('Please wait, uploading to dropbox...')
+          data.context.find('.bar').append('Please wait...')
 
   # $('#new_video').fileupload
   #   dataType: "script"

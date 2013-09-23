@@ -2,12 +2,14 @@ require 'bundler/capistrano'
 
 set :application, "vjencanje"
 
+
 set :scm, 'git'
 set :repository,  "git@github.com:d4be4st/josipaistjepan-vjencanje.git"
 set :branch, 'master'
 set :deploy_via, :remote_cache
 set :user, "www-data"
 set :use_sudo, false
+set :bundle_flags, "--quiet --no-cache"
 
 set :rails_env, 'production'
 set :deploy_to, "/var/www/v/vjencanje.hadjic.com"

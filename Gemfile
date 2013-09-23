@@ -29,6 +29,7 @@ end
 gem 'thin'
 gem 'haml'
 gem 'jquery-rails'
+# gem 'cocaine', '= 0.3.2'
 gem 'paperclip'
 # gem 'paperclip-dropbox'
 gem 'bootstrap-sass'
