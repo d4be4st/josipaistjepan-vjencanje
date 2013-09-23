@@ -1,5 +1,7 @@
 require 'bundler/capistrano'
+require "capistrano-rbenv"
 
+set :rbenv_ruby_version, "2.0.0.p247"
 set :application, "vjencanje"
 
 set :scm, 'git'
@@ -12,7 +14,7 @@ set :use_sudo, false
 set :rails_env, 'production'
 set :deploy_to, "/var/www/v/vjencanje.hadjic.com"
 
-host = 'vjencanje.hadjic.com'
+host = 'hadjic.com'
 set :domain, host
 role :web, host
 role :app, host
